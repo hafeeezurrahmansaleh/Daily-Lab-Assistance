@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+{% include 'chat.html' %}
+{% load static %}
+{% include 'base.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nadia</title>                                                                                                        
+    <style>
+        h2{
+            text-align: center;
+	        text-decoration:underline;
+            background-color: #E08A1E;
+            font-size: 50px;
+            padding: 30px;
+        }
+        .courselist{
+           
+           font-size: 25px;
+            
+            }
+        .liveclass{
+            background-color: #E08A1E;
+            height: 230px;
+            text-align: center;
+            display:none;
+            
+            font-size: 15px;
+        }
+        .mainsection {
+            width: 500px;
+            float: left;
+            margin-left:100px;
+            font-size: 30px;
+        }
+        .liveclass button{
+            font-size: 22px;
+            color: white;
+            background-color:#CA6924;
+            margin-top: 10px;
+            border-radius:20%;
+        }
+        .liveclass button:hover{
+            background-color:#645f2a;
+        }
+         body{
+            background-color: #F5D76E;
+
+        }
+        textarea{
+            height: 100px;
+            width: 400px;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+    <h2>Student Panel</h2>
+    </div>
+<div >
+    <div class="mainsection">
+        <span>Student ID:</span>
+        <div class="courselist">
+            <Span>Enrolled Courses:</Span>
+            <ol><a href="coursedetails">
+                <li>SWE413</li>
+                 <li>SWE415</li>
+                 <li>SWE410</li>
+             </a>
+            </ol>
+          </div>
+        <div>
+        <input type="image" src="image/delete.jpg" name="btndelete" style="width: 60px">
+        
+        <input type="image" src="image/assign.jpg" name="btnassignment" style="width: 60px">
+        </div>
+    </div>
+    <div class="mainsection">
+        <div >
+            Key:<input type="text" name="coursekey" />
+             <input type="image" src="image/ok.jpg" id="btnok" onclick="displayBlock()" style="width: 30px;" >
+        </div>
+        <div class="liveclass" id="liveclass">
+            <div>
+                <h1>Announcement</h1>
+                <textarea>gggggggggggggggghfffffffffffffffffffy yvhhhhh yfh7yyfdhd</textarea>
+            </div>
+            <div >
+                <button  id="helprequest"  onclick="displayhelp()">Ask For Help</button>
+                <button  name="chat" onclick="openchat()">Chat</button>
+                <button  name="submittask">Submit Task</button>
+               
+            </div>
+            <div style="padding: 10px;">
+             <label id="Helpmsg" style="display: none;">Your Request Has Been Sent.</label>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<script >
+        function displayBlock(){
+            var live=document.getElementById("liveclass");
+            if(live.style.display !== "none"){
+                live.style.display = "block";
+             }
+             else{
+                live.style.display = "none";
+             }
+        }
+        function displayhelp(){
+            var help=document.getElementById("Helpmsg");
+            help.style.display = "block";
+        }
+        function openchat(){
+
+        }
+    </script>
+</body>
+
+</html>

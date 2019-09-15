@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+<header class="header_area">
+        <!-- Top Header Area Start -->
+        <div class="top_header_area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md">
+                        <!--  Top Quote Area Start -->
+                        <div class="top_quote">
+                            <p>Welcome to SMART LAB ASSISTANCE</p>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="login_language_area d-flex align-items-center float-right">
+                            <!-- Login Register Area Start -->
+                            <div class="login_register">
+                                <a href="/web/login"><i class="fa fa-lock" aria-hidden="true"></i> Login</a>
+                            </div>
+                            <!-- Language Area Start -->
+                            <div class="language_area">
+                                <div class="dropdown">
+                                    <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" id="lag" type="button" class="btn btn-default dropdown-toggle"><i class="fa fa-globe" aria-hidden="true"></i> Language</button>
+                                    <ul aria-labelledby="lag" class="dropdown-menu">
+                                        <li><a href="#">English</a></li>
+                                        <li><a href="#">हिन्दी</a></li>
+                                        <li><a href="#">বাংলা</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</header>
+    <!-- Breadcumb area start -->
+    <section class="breadcumb_area" style="background-image: url({% static 'assets/img/bg-pattern/breadcumb.jpg' %});">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="breadcumb_section">
+                        <!-- Breadcumb page title start -->
+                        <div class="page_title">
+                            <h3>Register</h3>
+                        </div>
+                        <!-- Breadcumb page pagination start -->
+                        <div class="page_pagination">
+                            <ul>
+                                <li><a href="web/index">Home</a></li>
+                                <li><i class="fa fa-angle-right" aria-hidden="true"></i></li>
+                                <li>Register</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcumb area end -->
+
+     <!-- Login area start -->
+    <div class="login_area section_padding_100">
+        <div class="container">
+            <div class="row">
+                <!-- Login thumb -->
+                <div class="col-12 col-lg-5 col-xl-6">
+                    <div class="login_thumb" style="background-image: url({% static 'assets/img/bg-pattern/courses-bg.jpg' %});">
+                        <!-- Login thumb caption -->
+                        <div class="login_thumb_caption">
+                            <h3>Register is so Easy!</h3>
+                            <p>Register &amp; Life will be more easy!.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Register form area start  -->
+                <div class="col-12 col-lg-7 col-xl-6">
+                    <div class="register_form">
+                        <form action="/userhandling/index" method="post">
+                            {% csrf_token %}
+                            <!-- Single Register input area start  -->
+                           <div class="form-group">
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                <input type="text" name="name" id="name" placeholder="Enter Name">
+                            </div>
+
+                            <div class="form-group">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <input type="email" name="email" id="email" placeholder="Enter your Email">
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                                <input type="password" name="name" id="pass_a" placeholder="Password">
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-lock" aria-hidden="true"></i>
+                                <input type="password" name="password" id="password" placeholder="Confirm Password">
+                            </div>
+                            <!-- Single Register input area start  -->
+                            <div class="form-group">
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                <input type="text" name="coursecode" id="coursecode" placeholder="Course Code">
+                            </div>
+                            <!-- Single Register input area start  -->
+                            <div class="form-group">
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                <input type="text" name="coursetitle" id="coursetitle" placeholder="Course Title">
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                <input type="text" name="initial" id="initial" placeholder="Teacher Initial">
+                            </div>
+                            <div class="form-group">
+                                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                <input type="text" name="semester" id="semester" placeholder="Semester">
+                            </div>
+
+
+                            <!-- Single Register input area start  -->
+
+                            <!-- Single Register input area start  -->
+                            <!-- Single Register input area start  -->
+                            <center><label class="text-dsuccess">{{ msg }}</label></center>
+                            <button type="submit" class="btn btn-default" id="login_submit" style="width: 100%">Sign Up</button>
+                        </form><br>
+                        <div class="already_have_account" style="margin-bottom: -10px">
+                            <a href="/userhandling/"><i class="fa fa-user-plus" aria-hidden="true"></i> Already have a account? Login</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Register form area end  -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Login area end -->
+
+
+{% endblock %}
+
+<form method="POST">
+    {% csrf_token %}
+    <div class="col-md-2">
+        <a href="{% url 'login' %}">Login</a>
+    </div>
+    <div class="col-md-8">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" class="form-control" required="required">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="coursetitle">coursetitle</label>
+            <input type="text" name="coursetitle" class="form-control" required="required"/>
+        </div>
+        <div class="form-group">
+            <label for="coursecode">coursecode</label>
+            <input type="text" name="coursecode" class="form-control" required="required"/>
+        </div>
+        <br />
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary form-control"><span class="glyphicon glyphicon-save"></span> Submit</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+</head>
+<body>
+    <form method="get" action="/studentpanel/submitans/{{assignment.id}}">
+    <div style="width:80%; margin-left:auto;margin-right:auto;margin-top:50px;">
+        <table class="table table-bordered table-dark">
+            <tr>
+                <td style="width:30%">Assignment ID:</td>
+                <td>{{assignment.id}}</td>
+            </tr>
+            <tr>
+                <td style="width:30%">Assignment Title:</td>
+                <td>{{assignment.title}}</td>
+            </tr>
+            <tr>
+                <td style="width:30%">Assignment Details:</td>
+                <td>{{assignment.details}}</td>
+            </tr>
+            <tr>
+                <td style="width:30%">Submit your answer:</td>
+                <td>
+                    <textarea style="width:100%;height:200px;" name="ans">{{submission.ans}}</textarea><br>
+                    <label >Or attatch a file</label><br>
+                    <input type="file"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a  href="/studentpanel/deletesubmission/{{submission.id}}"  class="btn btn-danger btn-lg btn-block" style="float:right; ">Delete This Submission</a>
+                </td>
+                <td>
+                    <input type="submit"  value="Submit" class="btn btn-primary btn-lg btn-block" style="float:right; width:100%;"/>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+    </form>
+</body>
+</html>

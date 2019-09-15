@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Evaluate Assignment</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <style>
+        body{
+         background-color:#336e7b;
+          font-family: 'Roboto', sans-serif;
+        }
+        section{
+          margin: 50px;
+        }
+        .mainbody{
+            margin-left:auto;
+            margin-right: auto;
+            width:600px;
+
+        }
+        label{
+            font-weight:bold;
+            font-size:20px;
+            color: #fff;
+        }
+        .mainbody input, textarea{
+            width:600px;
+            height:50px;
+
+        }
+        .a div{
+            float: right;
+        }
+        <!--	 for nav bar-->
+	.nav ul {
+			  list-style-type: none;
+			  margin: 0;
+			  padding-left: 20px;
+			  overflow: hidden;
+			  background-color: #1f3a93;
+			  width: 100%;
+            height: 70px;
+
+			}
+			.nav li {
+                margin-left: 20px;
+			  float: left;
+
+			}
+
+			.nav li a {
+			  display: block;
+			  color: white;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+                font-size: 18px;
+                height: 70px;
+
+                padding-top: 20px;
+			}
+
+			.nav li a:hover:not(.active) {
+			  background-color: #009688;
+			}
+			.nav li h1{
+
+			}
+			.nav .active {
+			  background-color: #4CAF50;
+			}
+			.nav .active:hover {
+				background-color: red;
+			}
+
+			.submitted:hover{
+				background-color: #435d7d;
+				font-size:20px;
+				width:50px;
+				height:25px;
+				color:#ffffff;
+				font-weight:bold;
+			}
+    </style>
+</head>
+<body onload="javascript:">
+<div class="nav" style="background-color: #013243; height:70px ">
+
+		<ul >
+		  <li style="float:left"><a href="/studentpanel/register">HOME</a></li>
+		  <li style="float:left"><a href="/web/viewannouncement">HOME</a></li>
+		  <li style="float:right"><a class="active" href="/assignments/signout">Sign Out</a></li>
+		</ul>
+    </div><br>
+<div>
+     <h1 style="font-size:35px;text-align:center; font-weight:bold;color:#ffffff">{{course}}</h1>
+     <h1 style="font-size:20px;text-align:center; font-weight:bold;color:#ffffff">{{user.name}}</h1>
+ </div>
+<script  type="text/javascript">setvalue();</script>
+    <div class="mainbody">
+        <div>
+            <label>Submitted by: </label><span  style="margin-left: 10px; font-size:18px; font-weight:bold">{{submission.studentid}}</span><br>
+        </div><br>
+        <div>
+            <label>Submission Date:</label><span style="margin-left: 10px; font-size:18px; font-weight:bold">{{submission.submissiondate}}</span><br>
+        </div><br>
+
+        <div class="a">
+            <div>
+                <label>Assignment Title:</label><span  style="margin-left: 10px; font-size:18px; font-weight:bold">{{assinfo.title}}</span><br>
+                <label>Assignment Details</label><textarea style="height:50px; background-color:#ebebeb" readonly>{{assinfo.details}}</textarea>
+            </div>
+            <form method="get" action="/assignments/submitgrade/{{submission.id}}">
+                <div>
+                    <label>Answer:</label><br>
+                    <textarea style="height:300px; background-color:#ebebeb" readonly>{{submission.ans}}</textarea><br>
+                </div>
+                <div>
+                    <label>Grade:</label><br>
+                    <input type="number" name="givenmarks" id="givenmarks"/><br>
+                 </div>
+                <div>
+                    <label>Feedback:</label><br>
+                    <input type="text" name="feedback" id="feedback" style="height:70px" /></br>
+                </div><br>
+                <input type="submit" class="btn btn-warning" style="margin-top:20px; font-size:20px"/>
+            </form>
+        </div><br><br>
+    </div>
+
+<script type="text/javascript">
+    function setvalue(){
+        document.getElementById('givenmarks').value='{{submission.givenmarks}}';
+        document.getElementById('feedback').value='{{submission.feedback}}';
+     }
+     window.onload = setvalue;
+</script>
+</body>
+</html>

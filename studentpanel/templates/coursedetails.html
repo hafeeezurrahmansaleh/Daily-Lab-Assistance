@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+	{% load static %}
+{% include 'base1.html' %}
+<html>
+	<head>
+        <link href="{% static 'css/tablestyle.css' %}" rel="stylesheet">
+		<title>Course Details</title>
+			<style>
+                .head{
+                    padding-top: 20px;
+                    background-color: #03173c;
+                    color: white;
+                    height: 130px;
+                }
+				 h2, h1{
+					text-align: center;
+                     color: white;
+				}
+
+
+			</style>
+
+	</head>
+	<div >
+        <div>
+            <div class="head">
+                <h1 style="text-decoration:underline; color: white">{{course.enrollmentKey}}</h1>
+                <h2 style=" color: white; margin-top: -10px">{{course.users__name}}</h2>
+                <a style="color:#ffffff" href="/assignments/signout">Signout</a>
+            </div>
+            <!-- Start Fun Factor
+    ============================================= -->
+            <div class= "fun-factor-area default-padding bottom-less text-center bg-fixed shadow dark-hard" style="background-image: url({% static 'tmp/assets/img/banner/1.jpg' %});">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-6 item" style="width: 20%;">
+                            <div class="fun-fact">
+                                <div class="icon">
+                                    <i class="flaticon-contract"></i>
+                                </div>
+                                <div class="info">
+                                    <span class="timer" data-to="{{numofclasses}}" data-speed="1000"></span>
+                                    <span class="medium">Class Taken Till now</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 item" style="width: 20%;">
+                            <div class="fun-fact">
+                                <div class="icon">
+                                    <i class="flaticon-professor"></i>
+                                </div>
+                                <div class="info">
+                                    <span class="timer" data-to="{{mayattendance}}" data-speed="1000"></span>
+                                    <span class="medium">My Attendance</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 item" style="width: 20%;">
+                            <div class="fun-fact">
+                                <div class="icon">
+                                    <i class="flaticon-online"></i>
+                                </div>
+                                <div class="info">
+                                    <span class="timer" data-to="{{assignedwork}}" data-speed="1000"></span>
+                                    <span class="medium">Assigned Works</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 item" style="width: 20%;">
+                            <div class="fun-fact">
+                                <div class="icon">
+                                    <i class="flaticon-reading"></i>
+                                </div>
+                                <div class="info">
+                                    <span class="timer" data-to="{{mysubmissions}}" data-speed="1000"></span>
+                                    <span class="medium">My Submissions</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-6 item" style="width: 20%; height: 20%;">
+                            <div class="fun-fact">
+                                <div class="icon">
+                                    <i class="flaticon-reading"></i>
+                                </div>
+                                <div class="info">
+                                    <span style="color: red" class="timer" data-to="{{assignmentdue}}" data-speed="1000"></span>
+                                    <span class="medium">Assignment Due</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Fun Factor -->
+        </div>
+        <div style="background-color:#fff">
+            <div class="mainbody" style="margin-left:40px; width:60%;float:left;">
+                <div class="tbl1">
+                    <table >
+                        <tr>
+                            <th>Date</th>
+                            <th>Title</th>
+                            <th>Grade</th>
+                            <th> ----   </th>
+                        </tr>
+                        {% for assignments in assignment %}
+                        <tr>
+                            <td>{{ assignments.deadline }}</td>
+                            <td>{{ assignments.title }}</td>
+                            <td>{{ assignments.submissions__givenmarks }}</td>
+                            <td style="width:20%; ">
+                                <p><a class="btn-primary" href="/studentpanel/submitassignment/{{ assignments.id}}" style="margin-top: 8%;height:60px">View Details</a></p>
+                            </td>
+                        </tr>
+                        {% endfor %}
+
+                    </table>
+                    <a href="#" class="previous round">&#8249;</a>
+                    <a href="#" class="next round">&#8250;</a>
+                </div>
+            </div>
+            <div style="float:right; width:30%; height:600px; overflow-y: auto; margin-right:30px">
+                <table style="background-color:#ffffff; margin-top:-180px;width:100%">
+                    <tr style="background-color:#f39c12"><td><h1 style="color:#000000">Announcements</h1></td></tr>
+                    {% for announcement in announcements %}
+                    <tr >
+                        <td style="border-bottom: 1px solid #1C6EA4; margin-left:5px;">
+                            <span style="color:#000000">{{announcement.announcement}}</span><br>
+                            <span style="color:#000000">{{announcement.date}}</span><br>
+                        </td>
+                    </tr><br>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-dark default-padding-top text-light" style="padding-top: 0px">
+
+        <div class="footer-bottom" style="margin-top: 0px">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-6">
+                            <p> Copyright 2019. All Rights Reserved by <a href="https://www.facebook.com/hafeezurrahman.saleh">Hafeezur Rahman Saleh</a></p>
+                        </div>
+                        <div class="col-md-6 text-right link">
+                            <ul>
+                                <li>
+                                    <a href="#">Terms of user</a>
+                                </li>
+                                <li>
+                                    <a href="#">License</a>
+                                </li>
+                                <li>
+                                    <a href="#">Support</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Footer Bottom -->
+    </footer>
+	</body>
+</html>

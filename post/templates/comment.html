@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .comments{
+            margin-left: 40px;
+        }
+        body{
+            margin-left:auto;
+            margin-right:auto;
+            width:500px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        {% for author in postauthor %}
+        <span>{{author.author__name}} --------------------</span>
+        {% endfor %}
+        <span>{{post.date}}</span><br>
+        <p style="font-size:22px;">{{post.post}}</p><br>
+    </div>
+    <div class="comments">
+        {% for comments in comment %}
+         <div style="width:300px;border-bottom: 2px solid #000000;">
+            <span style="font-size:14px;">{{comments.user__name}}</span><br>
+            <p style="font-size:20px;">{{comments.comment}}</p>
+        </div><br>
+        {%endfor%}
+        <div>
+            <form method="" action="/post/addcomment/{{post.id}}">
+                <input type="text" name="txtcomment" placeholder="Write your comment here..."/>
+                <input type="submit" name="addcomment" value="Add Comment"/>
+            </form>
+
+        </div>
+
+    </div>
+</body>
+</html>

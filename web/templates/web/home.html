@@ -1,0 +1,331 @@
+{% extends 'web/base.html' %}
+{% load static %}
+{% block body %}
+
+<header class="header_area">
+        <!-- Top Header Area Start -->
+        <div class="top_header_area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md">
+                        <!--  Top Quote Area Start -->
+                        <div class="top_quote">
+                            <p>Welcome to SMART LAB ASSISTANCE</p>
+                        </div>
+                    </div>
+                    <div class="col-md">
+                        <div class="login_language_area d-flex align-items-center float-right">
+                            <!-- Login Register Area Start -->
+                            <div class="login_register">
+                                <a href="login.html"><i class="fa fa-lock" aria-hidden="true"></i> Login/Register</a>
+                            </div>
+                            <div>
+                                <a href="/assignments/signout"><i class="fa fa-lock" aria-hidden="true"></i> Log Out</a>
+                            </div>
+                            <!-- Language Area Start -->
+                            <div class="language_area">
+                                <div class="dropdown">
+                                    <button aria-expanded="false" aria-haspopup="true" data-toggle="dropdown" id="lag" type="button" class="btn btn-default dropdown-toggle"><i class="fa fa-globe" aria-hidden="true"></i> Language</button>
+                                    <ul aria-labelledby="lag" class="dropdown-menu">
+                                        <li><a href="#">English</a></li>
+                                        <li><a href="#">हिन्दी</a></li>
+                                        <li><a href="#">বাংলা</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</header>
+<!-- ===================== Welcome Area Start ===================== -->
+    <section class="welcome_area clearfix" id="home">
+        <div class="welcome_slides">
+            <!-- Single Slide -->
+            <div class="single_slide text-center" style="background-image: url({% static 'assets/img/bg-pattern/diu.jpg' %});">
+                <div class="slide_text">
+                    <div class="table">
+                        <div class="table_cell">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h2 data-animation="fadeInUp" data-delay="200ms" data-duration="500ms">MANAGE YOUR LAB CLASSES WITH SMART LAB ASSISTANCE</h2>
+                                        <p data-animation="fadeInUp" data-delay="500ms" data-duration="500ms"></p>
+                                        <a href="#" class="btn welcome-btn" data-animation="fadeInUp" data-delay="800ms" data-duration="500ms" style="height: 80px; width: 70%">Start Now <i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <!--Single Slide -->
+            <div class="single_slide text-center" style="background-image: url({% static 'assets/img/bg-pattern/edu-2.jpg' %});">
+                <div class="slide_text">
+                    <div class="table">
+                        <div class="table_cell">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h2 data-animation="fadeInUp" data-delay="200ms" data-duration="500ms">The number one source for education</h2>
+                                        <p data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">Education is the most powerful weapon which you can use to change the world.</p>
+                                        <a href="#" class="btn welcome-btn" data-animation="fadeInUp" data-delay="800ms" data-duration="500ms">Learn More <i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Slide -->
+            <div class="single_slide text-center" style="background-image: url({% static 'assets/img/bg-pattern/edu-1.jpg' %});">
+                <div class="slide_text">
+                    <div class="table">
+                        <div class="table_cell">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h2 data-animation="fadeInUp" data-delay="200ms" data-duration="500ms">Taking the lead for education quality</h2>
+                                        <p data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">Educating the mind without educating the heart is no education at all.</p>
+                                        <a href="#" class="btn welcome-btn" data-animation="fadeInUp" data-delay="800ms" data-duration="500ms">Start A Course <i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Single Slide -->
+            <div class="single_slide text-center" style="background-image: url({% static 'assets/img/bg-pattern/edu-2.jpg' %});">
+                <div class="slide_text">
+                    <div class="table">
+                        <div class="table_cell">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h2 data-animation="fadeInUp" data-delay="200ms" data-duration="500ms">The number one source for education</h2>
+                                        <p data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">Education is the most powerful weapon which you can use to change the world.</p>
+                                        <a href="#" class="btn welcome-btn" data-animation="fadeInUp" data-delay="800ms" data-duration="500ms">Learn More <i class="fa fa-angle-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ===================== Welcome Area End ===================== -->
+
+
+
+
+<style>
+    .body{
+        width: 900px;
+        margin-left:auto;
+        margin-right:auto;
+        background-color:#c4daff
+
+    }
+
+    img{
+        width:90px;
+        margin-bottom:8px;
+        border-radius: 50%;
+        border: 2px solid #ff675b;
+    }
+    .mainopt{
+        width:180px;
+        height:30px
+        border-radius: 50%;
+        border: 2px solid #ff675b;
+        font-size:20px;
+        background-color:#fccccc;
+        margin-bottom: 5px;
+    }
+    .request{
+        height:300px;
+        width:300px;
+        border: 2px solid #ff675b;
+        background-color:#ff776a
+    }
+
+    .image {
+        position:relative;
+        display:inline-block;
+    }
+    .overlay {
+        display:none;
+    }
+    .image:hover .overlay {
+        width:700px;
+        height:400px;
+        background:#cccf43;
+        position:absolute;
+        vertical-align:middle;
+        top:0;
+        left:-600px;
+        display:inline-block;
+        -webkit-box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        box-sizing:border-box;
+    }
+    h1{
+        text-align:center
+    }
+    #Instructor_info span{
+        font-size:18px;
+    }
+    #announcement{
+        display:none;
+    }
+    #announcement textarea{
+        height:100px;
+        width:300px;
+        background-color:#2475B0;
+        color:white;
+        padding-left:7px;
+        padding-top:7px;
+    }
+</style>
+<script>
+    function displayAnnouncement(){
+        document.getElementById("announcement").style.display = "block";
+    }
+    function hideAnnouncement(){
+        document.getElementById("announcement").style.display = "none";
+    }
+
+</script>
+<div class="bg-image"></div>
+<div class="bg-content">
+    <h1>Instructor Panel</h1>
+    <button class="btn btn-danger" style="width: 100%; height: 70px">START LIVE CLASS</button>
+    <div style="width: 1200px; margin-left: 200px">
+
+        <div id="Instructor_info" style="text-align: center">
+            <span>Teacher's name: </span><b>{{ member.username }}</b></br>
+            <span>Course: <b>{{ member.coursecode }}</b></span></br>
+            <span>Enrolled student:</span></br>
+        </div><br><br>
+        <div style="float: left; margin-left: 30px">
+            <div >
+                <div>
+                    <a class="btn btn-primary btn-lg btn-block" href = "/post" > See All Posts</a>
+                    <a href="/assignments"> <input type="image" src="{% static 'web/images/assignmentlogo.png' %}" style="width:240px" onclick="" /></a><br>
+                        <input type="image" onclick="displayAnnouncement()" src="{% static 'web/images/announcement.png' %}" style="width:260px; height:100px;" /><br>
+                        <div id="announcement">
+                        <div>
+                            <form method="get" action="/web/insertAnnouncement/">
+                                <textarea  name="announcement" id="ann" placeholder="Write here...." ></textarea><br>
+                                <input style="width:300px;" class="btn btn-success btn-lg btn-block" type="submit" onclick="hideAnnouncement()" value="Submit"/>
+                            </form>
+                        </div>
+                        <div>
+                        <div style=" width:400px; height:500px;overflow: auto; ">
+                            <table style="background-color:#ffffff; width:90%; margin-top:-350px">
+                                <tr style= "background-color: #2475B0; "><td><h1 style="color:#000000; text-align:center">Announcements</h1></td><td></td></tr>
+                                {% for announcement in announcements %}
+                                <tr style="border-bottom: 1px solid #1C6EA4; margin-left:5px">
+                                    <td>
+                                        <span style="color:#000000">{{announcement.announcement}}</span><br>
+                                        <span style="color:#000000">{{announcement.date}}</span><br>
+                                    </td>
+                                    <td style="height:10px; width:20px">
+<!--                                        <button class="btn btn-danger btn-lg btn-block"  onclick="editAnnouncement('{{announcement.announcement}}');">Edit</button>-->
+                                        <a class="btn btn-primary btn-lg btn-block" href="/web/deleteannouncement/{{announcement.id}}">Delete</a>
+                                    </td>
+                                    <br>
+                                </tr><br>
+                                {% endfor %}
+                            </table>
+                            <script>
+                                function editAnnouncement(announcementbody){
+                                    document.getElementById("ann").value = announcementbody;
+                                    displayAnnouncement();
+                                }
+                            </script>
+                        </div>
+
+                        </div>
+
+                    </div>
+
+                    </div>
+
+                </div>
+                <div class="request">
+                    <span style="margin-left:100px;font-size:20px">Requests</span>
+                    <ol>
+                        <li>Saleh</li>
+                        <li>Saleh</li>
+                        <li>Saleh</li>
+                    </ol>
+                </div>
+
+            </div>
+        </div>
+        <div style="float: right; margin-right: 200px">
+            <div>
+                <div>
+                    <span>Total Class:</span></br>
+                    <span>Total Enrolled Students:</span></br>
+                    <span>Students:</span></br>
+
+                </div>
+                <div >
+                    <div >
+                        <img src="{% static 'web/images/cartoon.png' %}"  alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <div class="image">
+                            <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                            <div class="overlay">hhhhhhhhhhhhhhhhhhhhhgggggggggggg
+                                <img style="width:700px; border-radius:0%" src="{% static 'web/images/fbThumb.png'%}">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div>
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                    </div>
+                    <div>
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                    </div>
+                    <div>
+                        <img src="{% static 'web/images/cartoon.png' %}"  alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                    </div>
+                    <div>
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                    </div>
+                    <div>
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                        <img src="{% static 'web/images/cartoon.png' %}" alt="img1">
+                    </div>
+                </div>
+                <button id="viewmore">View more...</button>
+            </div>
+        </div>
+
+</div>
+{% endblock %}

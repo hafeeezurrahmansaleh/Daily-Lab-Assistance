@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{% load static %}
+{% include 'base1.html' %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Panel Login</title>
+
+    <style>
+        .nav ul {
+			  list-style-type: none;
+			  margin: 0;
+			  padding-left: 20px;
+			  overflow: hidden;
+			  background-color: #03173c;
+			  width: 100%;
+            height: 70px;
+
+			}
+			.nav li {
+                margin-left: 20px;
+			  float: left;
+
+			}
+
+			.nav li a {
+			  display: block;
+			  color: white;
+			  text-align: center;
+			  padding: 14px 16px;
+			  text-decoration: none;
+                font-size: 18px;
+                height: 70px;
+
+                padding-top: 20px;
+			}
+
+			.nav li a:hover:not(.active) {
+			  background-color: #2d4f80;
+			}
+			.nav li h1{
+
+			}
+			.nav .active {
+			  background-color: #4CAF50;
+			}
+			.nav .active:hover {
+				background-color: red;
+			}
+    </style>
+
+</head>
+<body style="background-color: rgba(177, 190, 255, 0.72);">
+    <div class="nav">
+
+		<ul >
+		  <li><a href="/studentpanel/register">REGISTER</a></li>
+		  <li><a href="/web">INSTRUCTOR PANEL</a></li>
+		  <!--<li style="float:right"><a class="active" href="#about">Sign Out</a></li>-->
+		</ul>
+    </div>
+
+    <!-- Start Login
+    ============================================= -->
+    <div class="login-area default-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <form action="#" id="login-form" class="white-popup-block">
+                        <div class="col-md-4 login-social">
+                            <h4>Login with social</h4>
+                            <ul style="margin-left: 5px;">
+                                <li class="facebook">
+                                    <a href="#">
+                                        <i class="fab fa-facebook-f"></i>
+                                    </a>
+                                </li>
+                                <li class="twitter">
+                                    <a href="#">
+                                        <i class="fab fa-twitter"></i>
+                                    </a>
+                                </li>
+                                <li class="linkedin">
+                                    <a href="#">
+                                        <i class="fab fa-linkedin-in"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div style="margin-left: auto;
+                                            margin-right: auto; width: 220px">
+                                <img style="margin-top: 10px; margin-left: -25px;
+                                            margin-right: auto; width: 220px" src="{% static 'tmp/assets/img/loginimg.png' %}">
+                            </div>
+                        </div>
+                        <div class="col-md-8 login-custom">
+                            <h4>login to your registered account!</h4><br><br>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="username*" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="form-group">
+                                        <input class="form-control" placeholder="Password*" type="text">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <label for="login-remember"><input type="checkbox" id="login-remember">Remember Me</label>
+                                    <a title="Lost Password" href="#" class="lost-pass-link">Lost your password?</a>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                   <a href="/studentpanel/home"> <button type="submit" style="width: 100%" >
+                                        Login
+                                    </button></a>
+                                    <a href="/studentpanel/home">Log In</a>
+                                </div>
+                            </div>
+                            <p class="link-bottom">Not a member yet? <a href="/studentpanel/register">Register now</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Login Area -->
+
+
+</body>
+</html>
