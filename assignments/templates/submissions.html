@@ -1,79 +1,31 @@
+{% include 'web/base.html' %}
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Submissions</title>
-    <link href="{% static 'css/tablestyle.css' %}" rel="stylesheet" />
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+{#    <link href="{% static 'css/tablestyle.css' %}" rel="stylesheet" />#}
+{#    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />#}
   <style>
-    <!--	 for nav bar-->
-	.nav ul {
-			  list-style-type: none;
-			  margin: 0;
-			  padding-left: 20px;
-			  overflow: hidden;
-			  background-color: #1f3a93;
-			  width: 100%;
-            height: 70px;
-
-			}
-			.nav li {
-                margin-left: 20px;
-			  float: left;
-
-			}
-
-			.nav li a {
-			  display: block;
-			  color: white;
-			  text-align: center;
-			  padding: 14px 16px;
-			  text-decoration: none;
-                font-size: 18px;
-                height: 70px;
-
-                padding-top: 20px;
-			}
-
-			.nav li a:hover:not(.active) {
-			  background-color: #009688;
-			}
-			.nav li h1{
-
-			}
-			.nav .active {
-			  background-color: #4CAF50;
-			}
-			.nav .active:hover {
-				background-color: red;
-			}
-
-			.submitted:hover{
-				background-color: #435d7d;
-				font-size:20px;
-				width:50px;
-				height:25px;
-				color:#ffffff;
-				font-weight:bold;
-			}
+        .submitted:hover{
+            background-color: #435d7d;
+            font-size:20px;
+            width:50px;
+            height:25px;
+            color: #000000;
+            font-weight:bold;
+        }
   </style>
 </head>
-<body style="background-color:#336e7b;color:#000000">
-<div class="nav" style="background-color: #013243; height:70px ">
+<body style="background-color:#f2fbff;">
 
-		<ul >
-		  <li><a href="/studentpanel/register">HOME</a></li>
-		  <li><a href="/web/viewannouncement">HOME</a></li>
-		  <li style="float:right"><a class="active" href="/assignments/signout">Sign Out</a></li>
-		</ul>
-    </div>
-    <section>
+    <section  style="width: 80%;margin-left:auto; margin-right: auto">
   <!--for demo wrap-->
   <h1>All Submissions</h1>
       <h2>Assignment Title: <span>{{asstitle}}</span></h2>
-  <div class="tbl-header">
-    <table cellpadding="0" cellspacing="0" border="0">
+  <div class="">
+    <table  class="table table-hover" style="width: 80%;">
       <thead>
         <tr>
           <th>Student ID</th>
@@ -82,13 +34,10 @@
           <th>Action</th>
         </tr>
       </thead>
-    </table>
-  </div>
-  <div class="tbl-content">
-    <table cellpadding="0" cellspacing="0" border="0">
+
       <tbody>
       {% for submission in submissions %}
-        <tr>
+        <tr class="table-success" style="height: 5px">
           <td>{{submission.studentid}}</td>
           <td>{{submission.submissiondate}}</td>
           <td>{{submission.givenmarks}}</td>

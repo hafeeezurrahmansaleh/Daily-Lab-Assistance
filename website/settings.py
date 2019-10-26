@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'userhandling',
     'attendance',
     'post',
+    'sprogressreport',
     # 'ckeditor',
 ]
 

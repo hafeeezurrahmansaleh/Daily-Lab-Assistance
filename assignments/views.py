@@ -14,7 +14,7 @@ from web.models import Courses, Users
 
 def assignments(request):
     if 'user' not in request.session:
-       return redirect('/userhandling/login')
+       return redirect('/userhandling/')
     # assignments = Assignments.objects.all()
     # submissions = Submissions.objects.filter()
     else:

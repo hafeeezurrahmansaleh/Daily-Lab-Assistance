@@ -12,7 +12,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Examin - Education and LMS Template">
-
+{#    <link rel="stylesheet" type="text/css" href="{% static 'web/css/bootstrap.css' %}" />#}
     <!-- ========== Page Title ========== -->
     <title>Student Panel</title>
 
@@ -288,9 +288,9 @@
                     <div class="sidebar-item trending-courses-box" >
                         <h4 style="text-align:center">STUDENT PROFILE</h4>
                         <div class="trending-courses-items" style="height:545px">
-                            <div style="font-size:20px">
+                            <div style="font-size:20px; margin-top: -15px">
                                 <div>
-                                    <label>Name:&nbsp;&nbsp;&emsp;&emsp;</label><span style="font-weight:bold">{{student.name}}</span>
+                                    <label>Name:&nbsp;&nbsp;&emsp;&emsp;</label><span style="font-weight:bold;">{{student.name}}</span>
                                 </div>
                                 <div>
                                     <label>Student ID: &nbsp;</label><span style="font-weight:bold">{{student.email}}</span>
@@ -298,10 +298,12 @@
                                 <div>
                                     <label>University: &nbsp;&nbsp;</label><span style="font-weight:bold; font-size:17px">Daffodil International University</span>
                                 </div>
-                            </div><br>
-                            <div>
-                                <img sty src="{%static 'image/nadu.jpg' %}"/>
                             </div>
+                            <div style="margin-top: 10px">
+                                <img sty src="{%static 'image/nadu.jpg' %}"/>
+                                <button style="margin-top: 7px; width: 100%" type="button" class="btn-secondary">Edit Profile</button>
+                            </div>
+
 <!--                            <div class="item">-->
 <!--                                <div class="content">-->
 <!--                                    <div class="thumb">-->
@@ -399,14 +401,14 @@
 
     <!-- Start Footer 
     ============================================= -->
-    <footer class="bg-dark default-padding-top text-light" >
+    <footer class="bg-dark default-padding-top text-light" style="padding-top: 0px">
 
         <div class="footer-bottom">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="col-md-6">
-                            <p> Copyright 2019. All Rights Reserved by <a href="https://www.facebook.com/hafeezurrahman.saleh">Hafeezur Rahman Saleh</a></p>
+                            <p> All Rights Reserved by <a href="https://www.facebook.com/hafeezurrahman.saleh">Daffodil International University</a></p>
                         </div>
                         <div class="col-md-6 text-right link">
                             <ul>

@@ -16,13 +16,61 @@
     <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
     </head>
 <body>
+    <header class="header_area" style="position: fixed; top:0px; ">
+        <!-- Top Header Area Start -->
+        <div class="top_header_area" style="padding-top: 10px;">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md">
+                        <!--  Top Quote Area Start -->
+                        <div class="top_quote">
+                            <div class="login_register">
+                                <a href="/web/viewannouncement"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md" >
+                        <div class="login_language_area d-flex align-items-center float-right" >
+                            <!--  Top Quote Area Start -->
+                            <div class="top_quote" style="width: 170px">
+                                <div class="login_register" >
+                                    <a href="/sprogressreport"><i class="fa fa-pie-chart" aria-hidden="true"></i> Progress Report</a>
+                                </div>
+                            </div>
+                            <div class="top_quote" style="width: 170px">
+                                <div class="login_register" >
+                                    <a  href="/web/viewannouncement"><i class="fa fa-life-saver" aria-hidden="true"></i> Performance List</a>
+                                </div>
+                            </div>
+                            <div class="top_quote" style="width: 170px">
+                                <div class="login_register">
+                                    <a href="/web/viewannouncement/#coursesummary"><i class="fa fa-university" aria-hidden="true"></i> Course Info</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md" >
+                        <div class="login_language_area d-flex align-items-center float-right">
+
+                            <!-- Login Register Area Start -->
+                            <div class="login_register">
+                                <a href="/assignments/signout"><i class="fa fa-lock" aria-hidden="true"></i> Log Out</a>
+                            </div>
+                            <!-- Language Area Start -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</header>
 
         {% block body %}
         {% endblock %}
     </div>
 
 <!-- jQuery (necessary for all JavaScript plugins) -->
-    <script src="{% static 'assets/js/jquery-2.2.4.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery-2.2.4.min.js' %}" ></script>
     <!-- Popper js -->
     <script src="{% static 'assets/js/popper.min.js' %}"></script>
     <!-- Bootstrap js -->

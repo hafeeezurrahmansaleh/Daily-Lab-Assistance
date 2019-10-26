@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.urls import path
+
 from . import views
 
 urlpatterns = [
@@ -26,4 +28,5 @@ urlpatterns = [
     url(r'^userhandling/', include('userhandling.urls')),
     url(r'^', include('userhandling.urls')),
     url(r'^post', include('post.urls')),
+    path('sprogressreport/', include('sprogressreport.urls')),
 ]

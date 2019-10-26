@@ -1,0 +1,142 @@
+
+{% block body %}
+
+
+<!DOCTYPE html><html lang="en">
+<!-- Mirrored from flatfull.com/themes/todo/chart.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 02 Jul 2019 02:17:37 GMT -->
+{% load static %}
+<head> <meta charset="utf-8" /> <title>Web Application | todo</title> <meta name="description" content="app, web app, responsive, admin dashboard, admin, flat, flat ui, ui kit, off screen nav" /> <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> <link rel="stylesheet" href="{% static 'todo/css/app.v2.css' %}" type="text/css" /> <link rel="stylesheet" href="{% static 'todo/css/font.css' %}" type="text/css" cache="false" /> <!--[if lt IE 9]> <script src="{% static 'todo/js/ie/respond.min.js' %}" cache="false"></script> <script src="{% static 'todo/js/ie/html5.js' %}" cache="false"></script> <script src="js/ie/excanvas.js" cache="false"></script> <script src="js/ie/fix.js" cache="false"></script> <![endif]-->
+
+
+</head>
+<body>
+    <section class="hbox stretch"> <!-- .aside -->
+
+
+        <!-- .vbox -->
+        <section id="content">
+            <section class="vbox">
+                <header class="header bg-dark bg-gradient" style="background-color: #009688; color: white">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a href="#sparkline" data-toggle="tab">Sparkline</a>
+                        </li>
+                        <li class="">
+                            <a href="#morris" data-toggle="tab">Morris</a>
+                        </li>
+                        <li class="">
+                            <a href="#easy-pie-chart" data-toggle="tab">Easy pie chart</a>
+                        </li>
+                    </ul>
+                </header>
+            <section class="scrollable wrapper">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="sparkline">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <section class="panel">
+                                    <header class="panel-heading"> Student Attendance </header>
+                                    <div class="panel-body">
+                                        <div class="btn-group" data-toggle="buttons">
+                                            <label class="btn btn-sm btn-white active">
+                                                <input type="radio" name="options" id="option1"> Day </label>
+                                            <label class="btn btn-sm btn-white">
+                                                <input type="radio" name="options" id="option2"> Week
+                                            </label>
+                                            <label class="btn btn-sm btn-white">
+                                                <input type="radio" name="options" id="option2"> Month
+                                            </label>
+                                            <label class="btn btn-sm btn-white">
+                                                <input type="radio" name="options" id="option2"> Semester
+                                            </label>
+                                        </div>
+                                        <div class="line line-lg pull-in">
+
+                                        </div>
+                                        <div class="sparkline" data-type="line" data-resize="true" data-height="185" data-width="100%" data-line-width="1" data-line-color="#afcf6f" data-spot-color="#afcf6f" data-fill-color="rgba(240,240,240,0.5)" data-highlight-line-color="#e1e5e9" data-spot-radius="4" data-data="[20,250,200,325,400,380,250,320,345,250,250,250,200,325,300,365,250,210,200,180]" >
+
+                                        </div>
+                                        <ul class="list-inline text-muted axis">
+                                            <li>Day-1</li>
+                                            <li>Day-2</li>
+                                            <li>Day-3</li>
+                                            <li>Day-5</li>
+                                            <li>Day-6</li>
+                                            <li>Day-7</li>
+                                            <li>Day-8</li>
+                                            <li>Day-9</li>
+                                            <li>Day-10</li>
+                                            <li>Day-11</li>
+                                            <li>Day-12</li>
+                                            <li>Day-13</li>
+                                            <li>Day-14</li>
+                                            <li>Day-15</li>
+                                            <li>Day-16</li>
+                                            <li>Day-17</li>
+                                            <li>Day-18</li>
+                                            <li>Day-19</li>
+                                            <li>Day-20</li>
+
+                                        </ul>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-4" style="width: 34%">
+                                <section class="panel">
+                                    <header class="panel-heading">Today's Attendance</header>
+                                    <div class="panel-body text-center">
+                                        <div class="sparkline inline" data-type="pie" data-height="170" data-slice-colors="['#99c7ce','#f2f2f2']"onclick="location.href='{% url 'getattendance' %}'">70,30</div>
+                                        <div class="line pull-in"></div>
+                                        <div class="text-xs">
+                                            <i class="fa fa-circle text-info"></i> 70% Present
+                                            <i class="fa fa-circle text-muted"></i> 30% Absent
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+
+                            <div class="col-lg-4" style="width: 66%"> <section class="panel"> <header class="panel-heading">Lab Performance</header> <div class="panel-body text-center"> <div class="sparkline inline" data-type="bar" data-height="180" data-bar-width="20" data-bar-spacing="16" data-stacked-bar-color="['#afcf6f', '#00a8ff', '#9c88ff']">5:5:7,10:7:9,5:3:5,5:8:10,7:5:7,6:5:4,2:9:5,7:5:9,5:8:3,6:6:7,2:8:6,5:5:7,10:7:9,5:3:5,5:8:10,7:5:8,6:5:2,2:9:5,7:5:3,7:3:9,4:8:3,4:10:9,10:10:10,7:5:3,7:5:3</div>
+                                <ul  id="labperformance" style="font-size: 3px" class="list-inline text-muted axis">
+                                    <li style="margin-right: 5px;">1719</li>
+                                    <li style="margin-right: 5px;">1721</li>
+                                    <li style="margin-right: 5px;">1724</li>
+                                    <li style="margin-right: 5px;">1725</li>
+                                    <li style="margin-right: 5px;">1730</li>
+                                    <li style="margin-right: 5px;">1731</li>
+                                    <li style="margin-right: 5px;">1732</li>
+                                    <li style="margin-right: 5px;">1733</li>
+                                    <li style="margin-right: 5px;">1735</li>
+                                    <li style="margin-right: 5px;">1736</li>
+                                    <li style="margin-right: 5px;">1737</li>
+                                    <li style="margin-right: 5px;">1738</li>
+                                    <li style="margin-right: 5px;">1739</li>
+                                    <li style="margin-right: 5px;">1740</li>
+                                    <li style="margin-right: 5px;">1741</li>
+                                    <li style="margin-right: 5px;">1742</li>
+                                    <li style="margin-right: 5px;">1743</li>
+                                    <li style="margin-right: 5px;">1744</li>
+                                    <li style="margin-right: 5px;">1745</li>
+                                    <li style="margin-right: 5px;">1746</li>
+                                    <li style="margin-right: 5px;">1747</li>
+                                    <li style="margin-right: 5px;">17453</li>
+
+                                    <style>
+                                    li{
+
+                                        font-size: 11px;
+                                    }
+                                </style>
+                            </ul> </div> </section> </div> </div> </div>
+
+                    <div class="tab-pane" id="morris"> <div class="row"> <div class="col-lg-6"> <section class="panel"> <header class="panel-heading"> Jaguar 'E' Type vehicles in the UK </header> <div id="hero-graph" class="graph"></div> </section> </div> <div class="col-lg-6"> <section class="panel"> <header class="panel-heading"> Donut flavours </header> <div id="hero-donut" class="graph"></div> </section> </div> <div class="col-lg-6"> <section class="panel"> <header class="panel-heading"> Quarterly Apple iOS device unit sales </header> <div id="hero-area" class="graph"></div> </section> </div> <div class="col-lg-6"> <section class="panel"> <header class="panel-heading"> iPhone CPU benchmarks </header> <div id="hero-bar" class="graph"></div> </section> </div> </div> </div> <div class="tab-pane" id="easy-pie-chart"> <div class="row"> <div class="col-lg-4"> <section class="panel"> <header class="panel-heading"> Conversion </header> <div class="panel-body text-center"> <h4>62.5<small> hrs</small></h4> <small class="text-muted block">Updated at 2 minutes ago</small> <div class="inline"> <div class="easypiechart" data-percent="75" data-line-width="16" data-loop="false" data-size="188"> <span class="h2">75</span>% <div class="easypie-text"><button class="btn btn-link m-t-n-sm" data-toggle="class:pie"><i class="fa fa-play text text-muted"></i><i class="fa fa-pause text-active text-muted"></i></button></div> </div> </div> </div> <div class="panel-footer"><small>% of avarage rate of the Conversion</small></div> </section> </div> <div class="col-lg-4"> <section class="panel"> <header class="panel-heading"> Bounce rate </header> <div class="panel-body text-center"> <h4><small>last </small>12<small> hrs</small></h4> <small class="text-muted block">yesterday: 20%</small> <div class="inline"> <div class="easypiechart" data-percent="25" data-line-width="6" data-loop="false" data-size="188"> <span class="h2">25</span>% <div class="easypie-text">Today</div> </div> </div> </div> <div class="panel-footer"><small>% of change</small></div> </section> </div> <div class="col-lg-4"> <section class="panel"> <header class="panel-heading"> New visitors </header> <div class="panel-body text-center"> <h4>3,450</h4> <small class="text-muted block">Worldwide visitors</small> <div class="inline"> <div class="easypiechart" data-percent="60" data-line-width="30" data-track-color="#eee" data-bar-color="#afcf6f" data-scale-color="#fff" data-loop="false" data-size="188"> <span class="h2">60</span>% <div class="easypie-text">new visits</div> </div> </div> </div> <div class="panel-footer"><small>% of avarage rate of the visits</small></div> </section> </div> </div> </div> </div> </section> </section> </section> <!-- /.vbox --> </section>
+
+
+    <script src="{% static 'todo/js/app.v2.js' %}"></script> <!-- Bootstrap --> <!-- app --> <!-- Sparkline Chart --> <!-- Easy Pie Chart --> <!-- Morris -->
+    <script src="{% static 'todo/js/charts/morris/raphael-min.js' %}" cache="false"></script>
+    <script src="{% static 'todo/js/charts/morris/morris.min.js' %}" cache="false"></script>
+    </body>
+
+</html>
+{%  endblock %}
